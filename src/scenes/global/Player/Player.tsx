@@ -1,4 +1,4 @@
-import { Box, Button, Fade, Zoom, IconButton } from "@mui/material";
+import { Box, Fade, Zoom, IconButton } from "@mui/material";
 import { setIsPlayerOpen } from "@/state/playerReducer";
 import { useAppSelector, useAppDispatch } from "@/state/hooks";
 import { ArrowBack } from "@mui/icons-material";
@@ -11,8 +11,6 @@ const Player = () => {
   const isPlayerOpen = useAppSelector((state) => state.player.isPlayerOpen);
   return (
     <Box>
-      Player
-      <Button onClick={() => dispatch(setIsPlayerOpen())}>Play</Button>
       <Fade in={isPlayerOpen}>
         <Box
           sx={{
@@ -58,7 +56,7 @@ const Player = () => {
                   />
                 </IconButton>
               </Box>
-              <VideoPlayer id="C3GqqnJ9ID0" isPlayerOpen={isPlayerOpen} />
+              <VideoPlayer id="uYPbbksJxIg" isPlayerOpen={isPlayerOpen} />
             </Box>
           </Zoom>
         </Box>

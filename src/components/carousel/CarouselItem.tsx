@@ -1,6 +1,8 @@
 import { Movie } from "@/state/api";
 import { Box, Typography, Button, Fade } from "@mui/material";
 import { PlayArrow, Info } from "@mui/icons-material";
+import { useAppDispatch } from "@/state/hooks";
+import { setIsPlayerOpen } from "@/state/playerReducer";
 
 type Props = {
   movie: Movie;
@@ -10,6 +12,7 @@ type Props = {
 const CarouselItem = ({ movie, isSelected = true }: Props) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { backdrop_path, title, name, overview } = movie;
+  const dispatch = useAppDispatch();
   const IMG_BASE_URL = "https://image.tmdb.org/t/p/w1280/";
   return (
     <Box
@@ -69,7 +72,11 @@ const CarouselItem = ({ movie, isSelected = true }: Props) => {
               gap: "20px",
             }}
           >
-            <Button sx={{ width: "fit-content" }} variant="contained">
+            <Button
+              sx={{ width: "fit-content" }}
+              variant="contained"
+              onClick={() => dispatch(setIsPlayerOpen())}
+            >
               <Box
                 sx={{
                   display: "flex",
