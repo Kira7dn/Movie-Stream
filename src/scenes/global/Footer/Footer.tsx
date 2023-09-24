@@ -36,7 +36,10 @@ const Footer = () => {
               display: "flex",
               flexDirection: "row",
               justifyContent: "space-between",
-              width: "60%",
+              width: { md: "100%", lg: "60%" },
+              padding: "0 20px",
+              gap: "24px",
+              flexWrap: "wrap",
             }}
           >
             <Box
@@ -83,6 +86,7 @@ const Footer = () => {
                 flexDirection: "column",
                 gap: "10px",
                 alignItems: "flex-start",
+                width: "auto",
               }}
             >
               <img src={netflix} style={{ height: "30px", width: "auto" }} />

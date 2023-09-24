@@ -50,7 +50,18 @@ const CarouselItem = ({ movie, isSelected = true }: Props) => {
           }}
         >
           <Box>
-            <Typography variant="h2">{title || name}</Typography>
+            <Typography
+              variant="h2"
+              sx={{
+                display: "-webkit-box",
+                WebkitLineClamp: "1",
+                WebkitBoxOrient: "vertical",
+                overflow: "hidden",
+                fontSize: { xs: "24px" },
+              }}
+            >
+              {title || name}
+            </Typography>
             <Typography
               variant="h4"
               sx={{
@@ -88,7 +99,10 @@ const CarouselItem = ({ movie, isSelected = true }: Props) => {
                   variant="h4"
                   sx={{ fontWeight: 500, color: "#fff" }}
                 >
-                  WATCH NOW
+                  {/* hide Watchnow on mobile */}
+                  <Typography sx={{ display: { xs: "none", sm: "inline" } }}>
+                    WATCH NOW
+                  </Typography>
                 </Typography>
               </Box>
             </Button>
@@ -108,7 +122,9 @@ const CarouselItem = ({ movie, isSelected = true }: Props) => {
                   variant="h4"
                   sx={{ fontWeight: 500, color: "#fff" }}
                 >
-                  MORE INFORMATION
+                  <Typography sx={{ display: { xs: "none", sm: "inline" } }}>
+                    MORE INFORMATION
+                  </Typography>
                 </Typography>
               </Box>
             </Button>

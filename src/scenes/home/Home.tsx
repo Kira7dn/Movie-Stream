@@ -3,20 +3,16 @@ import { Box } from "@mui/material";
 import ContinueWatching from "./ContinueWatching";
 import NewRelease from "./NewRelease";
 import Popular from "./Popular";
-// import MovieCarousel from "./MovieCarousel/MovieCarousel";
-import React, { Suspense } from "react";
-import MovieCarouselSkeleton from "./MovieCarousel/MovieCarouselSkeleton";
+import MovieCarousel from "./MovieCarousel/MovieCarousel";
 
 const Home = () => {
   // const location = useLocation().pathname.slice(1);
-  const MovieCarousel = React.lazy(
-    () => import("./MovieCarousel/MovieCarousel")
-  );
+  // const MovieCarousel = React.lazy(
+  //   () => import("./MovieCarousel/MovieCarousel")
+  // );
   return (
     <Box>
-      <Suspense fallback={<MovieCarouselSkeleton />}>
-        <MovieCarousel />
-      </Suspense>
+      <MovieCarousel />
       <Box
         sx={{
           display: "flex",

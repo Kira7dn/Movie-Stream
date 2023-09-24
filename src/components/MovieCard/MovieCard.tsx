@@ -1,8 +1,8 @@
 import { Movie } from "@/state/api";
 import { Box, Typography } from "@mui/material";
 import genre from "@/assets/genre.json";
-import idToName from "@/function/idToName";
-import extractYear from "@/function/extractYear";
+import idToName from "@/utils/idToName";
+import extractYear from "@/utils/extractYear";
 import PopOverCenter from "../popover/PopOverCenter";
 import MovieCardDetail from "./MovieCardDetail";
 
@@ -47,23 +47,32 @@ const MovieCard = ({ movie }: Props) => {
           sx={{
             display: "flex",
             flexDirection: "column",
-            gap: "14px",
+            gap: { xs: "8px", sm: "14px" },
           }}
         >
-          <Typography variant="h3" sx={{ padding: "4px 0" }}>
+          <Typography
+            variant="h3"
+            sx={{ padding: "0", fontSize: { xs: "20px", sm: "24px" } }}
+          >
             {title}
           </Typography>
           <Box
             sx={{
               display: "flex",
-              gap: "14px",
+              gap: { xs: "8px", sm: "14px" },
               fontSize: "22px",
             }}
           >
-            <Typography variant="h3" sx={{ opacity: "50%", fontSize: "20px" }}>
+            <Typography
+              variant="h3"
+              sx={{ opacity: "50%", fontSize: { xs: "14px", sm: "20px" } }}
+            >
               {release_year}
             </Typography>
-            <Typography variant="h3" sx={{ opacity: "50%", fontSize: "20px" }}>
+            <Typography
+              variant="h3"
+              sx={{ opacity: "50%", fontSize: { xs: "14px", sm: "20px" } }}
+            >
               {genreRender}
             </Typography>
           </Box>

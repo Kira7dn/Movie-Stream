@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <ContainerWrapper>
       <FlexBetween>
-        <Button component="a" href="/" sx={{ padding: 0 }}>
+        <Button component="a" href="/" sx={{ paddingLeft: { xs: 1, sm: 1 } }}>
           <img src={logo} style={{}} />
         </Button>
         <Tabs
@@ -26,6 +26,7 @@ const Navbar = () => {
           onChange={handleChange}
           aria-label="nav tabs example"
           textColor="inherit"
+          sx={{ display: { xs: "none", md: "flex" } }}
         >
           <Tab
             component={Link}
@@ -91,6 +92,7 @@ const Navbar = () => {
             aria-label="language"
             sx={{
               color: tokens.grey[10],
+              display: { xs: "none", sm: "block" },
             }}
           >
             <Public fontSize="large" />
@@ -99,6 +101,7 @@ const Navbar = () => {
             aria-label="account"
             sx={{
               color: tokens.grey[10],
+              display: { xs: "none", sm: "block" },
             }}
           >
             <AccountCircle fontSize="large" />

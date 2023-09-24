@@ -3,7 +3,7 @@ import { Box, Typography } from "@mui/material";
 import { tokens } from "@/theme";
 import { PlayCircleFilledOutlined } from "@mui/icons-material";
 import genre from "@/assets/genre.json";
-import idToName from "@/function/idToName";
+import idToName from "@/utils/idToName";
 import VideoPlayCard from "./VideoPlayCard";
 import PopOverCenter from "../popover/PopOverCenter";
 
@@ -82,23 +82,32 @@ const VideoCard = ({ movie }: Props) => {
         sx={{
           display: "flex",
           flexDirection: "column",
-          gap: "14px",
+          gap: { xs: "4px", sm: "14px" },
         }}
       >
-        <Typography variant="h3" sx={{ padding: "4px 0" }}>
+        <Typography
+          variant="h3"
+          sx={{ padding: "0", fontSize: { xs: "20px" } }}
+        >
           {title}
         </Typography>
         <Box
           sx={{
             display: "flex",
-            gap: "14px",
+            gap: { xs: "8px", sm: "14px" },
             fontSize: "22px",
           }}
         >
-          <Typography variant="h3" sx={{ opacity: "50%", fontSize: "20px" }}>
+          <Typography
+            variant="h3"
+            sx={{ opacity: "50%", fontSize: { xs: "14px", sm: "20px" } }}
+          >
             2023
           </Typography>
-          <Typography variant="h3" sx={{ opacity: "50%", fontSize: "20px" }}>
+          <Typography
+            variant="h3"
+            sx={{ opacity: "50%", fontSize: { xs: "14px", sm: "20px" } }}
+          >
             {genreRender}
           </Typography>
         </Box>
